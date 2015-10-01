@@ -1,8 +1,8 @@
-package com.github.fandetwa.template
+package com.github.fandetwa.kaggle.titanic
 
 import java.io.File
 
-import com.github.fandetwa.template.spark.SparkRegistrator
+import com.github.fandetwa.kaggle.titanic.spark.SparkRegistrator
 import org.apache.spark.serializer.KryoSerializer
 import org.apache.spark.sql.SQLContext
 import org.apache.spark.{SparkConf, SparkContext}
@@ -12,7 +12,7 @@ object App {
   def main(args: Array[String]) {
     val (sc, sqlContext) = loadContexts()
 
-    val filePath = "src/main/resources/data/FL_insurance_sample.csv"
+    val filePath = "src/main/resources/data/train.csv"
     val df = sqlContext.read.format("com.databricks.spark.csv").options(Map(
       "header" -> "true",
       "delimiter" -> ","

@@ -1,6 +1,6 @@
-package com.github.fandetwa.template.spark
+package com.github.fandetwa.kaggle.titanic.spark
 
-import com.github.fandetwa.template.spark.RDDImplicits.RichRDD
+import com.github.fandetwa.kaggle.titanic.spark.RDDImplicits.RichRDD
 import com.holdenkarau.spark.testing.SharedSparkContext
 import org.scalatest.{DoNotDiscover, FreeSpec, Matchers}
 

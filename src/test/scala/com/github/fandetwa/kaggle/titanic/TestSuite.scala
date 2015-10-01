@@ -1,9 +1,9 @@
-package com.github.fandetwa.template
+package com.github.fandetwa.kaggle.titanic
 
 import java.io.File
 
-import com.github.fandetwa.template.integration.SampleIntegrationTest
-import com.github.fandetwa.template.spark.RDDImplicitsTest
+import com.github.fandetwa.kaggle.titanic.integration.SampleIntegrationTest
+import com.github.fandetwa.kaggle.titanic.spark.RDDImplicitsTest
 import org.junit.runner.RunWith
 import org.scalatest.junit.JUnitRunner
 import org.scalatest.{BeforeAndAfterAll, Suites}

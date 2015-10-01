@@ -1,4 +1,4 @@
-package com.github.fandetwa.template.integration
+package com.github.fandetwa.kaggle.titanic.integration
 
 import org.scalatest.{DoNotDiscover, FreeSpec, Matchers}
 

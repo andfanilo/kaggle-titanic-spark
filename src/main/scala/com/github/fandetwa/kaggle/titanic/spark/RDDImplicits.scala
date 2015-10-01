@@ -1,4 +1,4 @@
-package com.github.fandetwa.template.spark
+package com.github.fandetwa.kaggle.titanic.spark
 
 import org.apache.spark.rdd.RDD
 

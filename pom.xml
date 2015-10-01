@@ -4,11 +4,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.github.fandetwa</groupId>
-    <artifactId>template</artifactId>
+    <artifactId>kaggle-titanic-spark</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>Template</name>
+    <name>Kaggle Titanic Spark</name>
     <url>http://maven.apache.org</url>
 
     <properties>
