@@ -1,13 +1,14 @@
 package com.github.fandetwa.kaggle.titanic.spark
 
 import org.apache.spark.rdd.RDD
+import org.apache.spark.sql.DataFrame
 
 import scala.reflect.ClassTag
 
 /**
  * All implicit classes for enriching RDD functionality
  */
-object RDDImplicits {
+object SparkImplicits {
 
   implicit class RichRDD[T: ClassTag](rdd: RDD[T]) {
 
@@ -23,6 +24,18 @@ object RDDImplicits {
         case x: Int if x < rdd.partitions.length => rdd.coalesce(nbOutputPartitions, shuffle = false)
         case _ => rdd
       }
+    }
+  }
+
+  implicit class RichDataFrame(df: DataFrame) {
+
+    /**
+     * Extract value inside the given column of first row as Double
+     * @param column column where to extract value from
+     * @return value inside cell in first row at given column
+     */
+    def extractDouble(column: String) = {
+      df.select(column).head().getLong(0).toDouble
     }
   }
 

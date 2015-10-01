@@ -2,8 +2,7 @@ package com.github.fandetwa.kaggle.titanic
 
 import java.io.File
 
-import com.github.fandetwa.kaggle.titanic.integration.SampleIntegrationTest
-import com.github.fandetwa.kaggle.titanic.spark.RDDImplicitsTest
+import com.github.fandetwa.kaggle.titanic.spark.SparkImplicitsTest
 import org.junit.runner.RunWith
 import org.scalatest.junit.JUnitRunner
 import org.scalatest.{BeforeAndAfterAll, Suites}
@@ -13,9 +12,8 @@ import org.scalatest.{BeforeAndAfterAll, Suites}
  */
 @RunWith(classOf[JUnitRunner])
 class TestSuite extends Suites(
-  new RDDImplicitsTest,
-  new SampleUnitTest,
-  new SampleIntegrationTest
+  new SparkImplicitsTest,
+  new SampleUnitTest
 ) with BeforeAndAfterAll {
 
   override def beforeAll() {

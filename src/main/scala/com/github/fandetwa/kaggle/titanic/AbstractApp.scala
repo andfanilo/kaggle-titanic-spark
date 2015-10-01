@@ -19,21 +19,23 @@ abstract class AbstractApp extends Logging {
   val trainingPath = "src/main/resources/data/train.csv"
   val testingPath = "src/main/resources/data/test.csv"
 
+  // Since we initialise the App before launching the main, let's start our contexts at the very init
+  val (sc, sqlContext) = loadContexts()
+
   /**
-   * Entry point to application, initialises the application context and dataframes
+   * Entry point to application, which serves at loading data and stopping Spark context at end of execution
    * @param args arguments for app
    */
   def main(args: Array[String]): Unit = {
-    val (sc, sqlContext) = loadContexts()
-    val (trainingDF, testingDF) = loadDataFrames(sqlContext, trainingPath, testingPath)
-    execute(sc, sqlContext, trainingDF, testingDF)
+    val (trainingDF, testingDF) = loadDataFrames(trainingPath, testingPath)
+    execute(trainingDF, testingDF)
     sc.stop()
   }
 
   /**
    * Override this to add functionality to your application
    */
-  def execute(sc: SparkContext, sQLContext: SQLContext, trainingDataFrame: DataFrame, testDataFrame: DataFrame)
+  def execute(trainingDataFrame: DataFrame, testDataFrame: DataFrame)
 
   /**
    * Create a SparkContext and associated SQLContext
@@ -48,6 +50,7 @@ abstract class AbstractApp extends Logging {
       .setAppName("kaggle-titanic-spark")
       .set("spark.serializer", classOf[KryoSerializer].getCanonicalName)
       .set("spark.kryo.registrator", classOf[SparkRegistrator].getCanonicalName)
+      .set("spark.sql.shuffle.partitions", "10")
     val sc = new SparkContext(conf)
     val sqlContext = new SQLContext(sc)
     (sc, sqlContext)
@@ -55,12 +58,11 @@ abstract class AbstractApp extends Logging {
 
   /**
    * Load data input into DataFrames
-   * @param sqlContext Spark SQL Context
    * @param trainingPath path to training dataset
    * @param testingPath path to test dataset
    * @return (dataframe of training data, dataframe of test data)
    */
-  private def loadDataFrames(sqlContext: SQLContext, trainingPath: String, testingPath: String): (DataFrame, DataFrame) = {
+  private def loadDataFrames(trainingPath: String, testingPath: String): (DataFrame, DataFrame) = {
     (DataFrameReader.loadCSV(sqlContext, trainingPath), DataFrameReader.loadCSV(sqlContext, testingPath))
   }
 
