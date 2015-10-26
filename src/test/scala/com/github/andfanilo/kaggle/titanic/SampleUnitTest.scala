@@ -1,4 +1,4 @@
-package com.github.fandetwa.kaggle.titanic
+package com.github.andfanilo.kaggle.titanic
 
 import org.scalatest.{DoNotDiscover, FreeSpec, Matchers}
 

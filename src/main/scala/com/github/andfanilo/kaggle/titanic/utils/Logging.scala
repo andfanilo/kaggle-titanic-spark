@@ -1,4 +1,4 @@
-package com.github.fandetwa.kaggle.titanic.utils
+package com.github.andfanilo.kaggle.titanic.utils
 
 import org.slf4j.{Logger, LoggerFactory}
 
@@ -17,18 +17,6 @@ trait Logging {
     if (log.isInfoEnabled) log.info(msg)
   }
 
-  protected def logDebug(msg: => String) {
-    if (log.isDebugEnabled) log.debug(msg)
-  }
-
-  protected def logTrace(msg: => String) {
-    if (log.isTraceEnabled) log.trace(msg)
-  }
-
-  protected def logWarning(msg: => String) {
-    if (log.isWarnEnabled) log.warn(msg)
-  }
-
   // Method to get or create the logger for this object
   protected def log: Logger = {
     if (log_ == null) {
@@ -41,6 +29,18 @@ trait Logging {
   protected def logName = {
     // Ignore trailing $'s in the class names for Scala objects
     this.getClass.getName.stripSuffix("$")
+  }
+
+  protected def logDebug(msg: => String) {
+    if (log.isDebugEnabled) log.debug(msg)
+  }
+
+  protected def logTrace(msg: => String) {
+    if (log.isTraceEnabled) log.trace(msg)
+  }
+
+  protected def logWarning(msg: => String) {
+    if (log.isWarnEnabled) log.warn(msg)
   }
 
   protected def logError(msg: => String) {

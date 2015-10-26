@@ -1,6 +1,7 @@
-package com.github.fandetwa.kaggle.titanic
+package com.github.andfanilo.kaggle.titanic
 
-import com.github.fandetwa.kaggle.titanic.spark.SparkImplicits.RichDataFrame
+import com.github.andfanilo.kaggle.titanic.spark.SparkImplicits
+import com.github.andfanilo.kaggle.titanic.spark.SparkImplicits.RichDataFrame
 import org.apache.spark.sql.DataFrame
 
 /**

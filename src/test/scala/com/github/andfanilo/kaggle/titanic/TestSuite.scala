@@ -1,8 +1,8 @@
-package com.github.fandetwa.kaggle.titanic
+package com.github.andfanilo.kaggle.titanic
 
 import java.io.File
 
-import com.github.fandetwa.kaggle.titanic.spark.SparkImplicitsTest
+import com.github.andfanilo.kaggle.titanic.spark.SparkImplicitsTest
 import org.junit.runner.RunWith
 import org.scalatest.junit.JUnitRunner
 import org.scalatest.{BeforeAndAfterAll, Suites}

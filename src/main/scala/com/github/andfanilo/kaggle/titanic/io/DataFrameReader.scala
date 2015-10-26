@@ -1,4 +1,4 @@
-package com.github.fandetwa.kaggle.titanic.io
+package com.github.andfanilo.kaggle.titanic.io
 
 import org.apache.spark.sql.{DataFrame, SQLContext}
 

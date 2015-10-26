@@ -1,10 +1,10 @@
-package com.github.fandetwa.kaggle.titanic
+package com.github.andfanilo.kaggle.titanic
 
 import java.io.File
 
-import com.github.fandetwa.kaggle.titanic.io.DataFrameReader
-import com.github.fandetwa.kaggle.titanic.spark.SparkRegistrator
-import com.github.fandetwa.kaggle.titanic.utils.Logging
+import com.github.andfanilo.kaggle.titanic.io.DataFrameReader
+import com.github.andfanilo.kaggle.titanic.spark.SparkRegistrator
+import com.github.andfanilo.kaggle.titanic.utils.Logging
 import org.apache.spark.serializer.KryoSerializer
 import org.apache.spark.sql.{DataFrame, SQLContext}
 import org.apache.spark.{SparkConf, SparkContext}

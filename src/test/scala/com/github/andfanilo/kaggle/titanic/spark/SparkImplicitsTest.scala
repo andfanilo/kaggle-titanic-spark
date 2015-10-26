@@ -1,6 +1,6 @@
-package com.github.fandetwa.kaggle.titanic.spark
+package com.github.andfanilo.kaggle.titanic.spark
 
-import com.github.fandetwa.kaggle.titanic.spark.SparkImplicits._
+import com.github.andfanilo.kaggle.titanic.spark.SparkImplicits._
 import com.holdenkarau.spark.testing.SharedSparkContext
 import org.apache.spark.sql.SQLContext
 import org.scalatest.{DoNotDiscover, FreeSpec, Matchers}

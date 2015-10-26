@@ -1,4 +1,4 @@
-package com.github.fandetwa.kaggle.titanic.spark
+package com.github.andfanilo.kaggle.titanic.spark
 
 import com.esotericsoftware.kryo.Kryo
 import org.apache.spark.serializer.KryoRegistrator
